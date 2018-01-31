@@ -1,6 +1,6 @@
 {
-  "name": "un women plugin",
-  "description": "",
+  "name": "user",
+  "description": "user, a plugin for Kolibri.",
   "private": true,
   "dependencies": {
   }

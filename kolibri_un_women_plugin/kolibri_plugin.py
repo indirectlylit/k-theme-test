@@ -4,20 +4,18 @@ from kolibri.plugins.base import KolibriPluginBase
 from . import hooks, urls
 
 
-class UnWomenPlugin(KolibriPluginBase):
+class User(KolibriPluginBase):
     def url_module(self):
         return urls
 
     def url_slug(self):
-        return "^kolibri_un_women_plugin/"
+        return "^user/"
 
 
-
-
-class UnWomenPluginAsset(webpack_hooks.WebpackBundleHook):
-    unique_slug = "kolibri_un_women_plugin_module"
+class UserAsset(webpack_hooks.WebpackBundleHook):
+    unique_slug = "user_module"
     src_file = "assets/src/app.js"
-    
 
 
-
+class UserInclusionHook(hooks.UserSyncHook):
+    bundle_class = UserAsset

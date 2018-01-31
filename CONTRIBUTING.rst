@@ -13,7 +13,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/ralphiee22/kolibri-un-women-plugin.git/issues.
+Report bugs at https://github.com/learningequality/kolibri-un-women-plugin.git/issues.
 
 If you are reporting a bug, please include:
 

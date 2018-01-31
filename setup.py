@@ -19,7 +19,7 @@ def read_file(fname):
 
 dist_name = 'kolibri_un_women_plugin'
 plugin_name = 'kolibri_un_women_plugin'
-repo_url = 'https://github.com/ralphiee22/kolibri-un-women-plugin.git'
+repo_url = 'https://github.com/learningequality/kolibri-un-women-plugin.git'
 
 readme = read_file('README.rst')
 doclink = """
@@ -30,7 +30,7 @@ The full documentation is at."""
 
 # Default description of the distributed package
 description = (
-    """"""
+    """Kolibri Plugin to provide specific functionality and branding for the UN Women project"""
 )
 
 
@@ -67,8 +67,9 @@ setup(
         str(plugin_name),  # https://github.com/pypa/setuptools/pull/597
     ],
     package_dir={plugin_name: plugin_name},
+    install_requires=["social-auth-app-django"],
     include_package_data=True,
-    license='MIT',
+    license='All Rights Reserved',
     zip_safe=False,
     keywords='kolibri',
     classifiers=[
