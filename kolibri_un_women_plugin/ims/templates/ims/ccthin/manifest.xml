@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="cctd0001"
+          xmlns="http://www.imsglobal.org/xsd/imsccv1p3/imscp_v1p1"
+          xmlns:lom="http://ltsc.ieee.org/xsd/imsccv1p3/LOM/resource"
+          xmlns:lomimscc="http://ltsc.ieee.org/xsd/imsccv1p3/LOM/manifest"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="
+  http://www.imsglobal.org/xsd/imsccv1p3/imscp_v1p1 http://www.imsglobal.org/profile/cc/ccv1p3/ccv1p3_imscp_v1p1_v1p0.xsd
+  http://ltsc.ieee.org/xsd/imsccv1p3/LOM/resource http://www.imsglobal.org/profile/cc/ccv1p3/LOM/ccv1p3_lomresource_v1p0.xsd
+  http://ltsc.ieee.org/xsd/imsccv1p3/LOM/manifest http://www.imsglobal.org/profile/cc/ccv1p2/LOM/ccv1p3_lommanifest_v1p0.xsd" >
+    
+    <metadata>
+        <schema>IMS Thin Common Cartridge</schema>
+        <schemaversion>1.3.0</schemaversion>
+        <lomimscc:lom>
+            <lomimscc:general>
+                <lomimscc:title>
+                    <lomimscc:string language="en-US">Kolibri</lomimscc:string>
+                </lomimscc:title>
+                <lomimscc:description>
+                    <lomimscc:string language="en-US"></lomimscc:string>
+                </lomimscc:description>
+            </lomimscc:general>
+        </lomimscc:lom>
+    </metadata>
+
+    <organizations>
+        <organization identifier="root_org" structure="rooted-hierarchy">
+            <item identifier="root_item">
+
+                {% for channel in channels %}
+                {% if channel.root.available %}
+                <item identifier="i_{{ channel.id }}">
+                    <title>{{ channel.name }}</title>
+                    {% for topic in channel.root.get_children %}
+                    {% if topic.available %}
+                    <item identifier="i_{{ topic.id }}" identifierref="r_{{ topic.id }}">
+                        <title>{{ topic.title }}</title>
+                    </item>
+                    {% endif %}
+                    {% endfor %}
+                </item>
+                {% endif %}
+                {% endfor %}
+
+            </item>
+        </organization>
+    </organizations>
+    
+    <resources>
+    {% for channel in channels %}
+        {% for topic in channel.root.get_children %}
+        <resource identifier="r_{{ topic.id }}" type="imswl_xmlv1p3">
+            <wl:webLink>
+                <wl:title>{{ topic.title }}</title>
+                <wl:url href="{{ baseurl }}learn/#/topics/{{ topic.id }}"/>
+            </wl:webLink>
+        </resource>
+        {% endfor %}
+    {% endfor %}
+    </resources>
+
+</manifest>
