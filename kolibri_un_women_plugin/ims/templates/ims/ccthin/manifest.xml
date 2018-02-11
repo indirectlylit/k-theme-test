@@ -27,37 +27,22 @@
     <organizations>
         <organization identifier="root_org" structure="rooted-hierarchy">
             <item identifier="root_item">
-
-                {% for channel in channels %}
-                {% if channel.root.available %}
-                <item identifier="i_{{ channel.id }}">
-                    <title>{{ channel.name }}</title>
-                    {% for topic in channel.root.get_children %}
-                    {% if topic.available %}
-                    <item identifier="i_{{ topic.id }}" identifierref="r_{{ topic.id }}">
-                        <title>{{ topic.title }}</title>
-                    </item>
-                    {% endif %}
-                    {% endfor %}
-                </item>
-                {% endif %}
-                {% endfor %}
-
+                {% for node in nodes %}{% include "ims/ccthin/item.xml" %}{% endfor %}
             </item>
         </organization>
     </organizations>
     
     <resources>
-    {% for channel in channels %}
-        {% for topic in channel.root.get_children %}
-        <resource identifier="r_{{ topic.id }}" type="imswl_xmlv1p3">
+
+    {% for resource in resources %}
+        <resource identifier="r_{{ resource.id }}" type="imswl_xmlv1p3">
             <wl:webLink>
-                <wl:title>{{ topic.title }}</title>
-                <wl:url href="{{ baseurl }}learn/#/topics/{{ topic.id }}"/>
+                <wl:title>{{ resource.title }}</wl:title>
+                <wl:url href="{{ baseurl }}{% url 'kolibri:imsplugin:permalink' %}?node_id={{ resource.id }}&channel_id={{ resource.channel_id }}&content_id={{ resource.content_id }}"/>
             </wl:webLink>
         </resource>
-        {% endfor %}
     {% endfor %}
+
     </resources>
 
 </manifest>
