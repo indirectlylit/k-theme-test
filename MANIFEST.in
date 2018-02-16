@@ -5,6 +5,7 @@ include LICENSE
 include README.rst
 include requirements.txt
 recursive-exclude kolibri_un_women_plugin/* *pyc
+recursive-include kolibri_un_women_plugin/ims/* *.*
 recursive-include kolibri_un_women_plugin/static *.*
 
 recursive-include kolibri_un_women_plugin/build *.json
