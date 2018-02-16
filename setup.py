@@ -5,7 +5,7 @@ from __future__ import absolute_import, print_function, unicode_literals
 import logging
 import sys
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 def read_file(fname):
@@ -63,9 +63,7 @@ setup(
     author='Learning Equality',
     author_email='info@learningequality.org',
     url=repo_url,
-    packages=[
-        str(plugin_name),  # https://github.com/pypa/setuptools/pull/597
-    ],
+    packages=find_packages(),
     package_dir={plugin_name: plugin_name},
     install_requires=["social-auth-app-django==2.1.0"],
     include_package_data=True,
