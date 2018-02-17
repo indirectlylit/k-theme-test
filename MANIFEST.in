@@ -8,6 +8,7 @@ recursive-exclude kolibri_un_women_plugin/* *pyc
 recursive-include kolibri_un_women_plugin/locale/* *.*
 recursive-include kolibri_un_women_plugin/static *.*
 recursive-include kolibri_un_women_plugin/templates *.*
+recursive-include kolibri_un_women_plugin/ims *.*
 
 recursive-include kolibri_un_women_plugin/build *.json
 recursive-exclude kolibri_un_women_plugin/assets *
