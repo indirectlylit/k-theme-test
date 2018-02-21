@@ -3,4 +3,6 @@
  * It will be bundled into the webpack configuration at build time.
  */
 
-module.exports = {};
+module.exports = {
+  coreAPISpec: './assets/src/coreAPI.js',
+};

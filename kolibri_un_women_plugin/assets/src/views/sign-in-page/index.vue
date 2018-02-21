@@ -67,6 +67,11 @@
             :disabled="busy"
           />
         </form>
+
+        <div class="divider"></div>
+
+        <social-sign-in />
+
         <div class="divider"></div>
 
         <p class="login-text no-account">{{ $tr('noAccount') }}</p>
@@ -120,6 +125,7 @@
   import uiAlert from 'keen-ui/src/UiAlert';
   import languageSwitcherFooter from '../language-switcher-footer';
   import coreSnackbar from 'kolibri.coreVue.components.coreSnackbar';
+  import SocialSignIn from '../SocialSignIn';
 
   export default {
     name: 'signInPage',
@@ -149,6 +155,7 @@
       uiAlert,
       languageSwitcherFooter,
       coreSnackbar,
+      SocialSignIn,
     },
     data: () => ({
       username: '',
@@ -362,14 +369,14 @@
       background-color: $core-text-default
       color: $core-grey
 
-      &:hover
+      &:hover, &:focus
         background-color: #0E0E0E
 
     .button.secondary.flat
       color: $core-grey
       font-weight: normal
 
-      &:hover
+      &:hover, &:focus
         background: none
 
   .fh
@@ -418,7 +425,7 @@
 
   .divider
     margin: auto
-    margin-top: 48px
+    margin-top: 36px
     margin-bottom: 36px
     width: 100%
     max-width: 412px
