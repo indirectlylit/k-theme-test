@@ -23,9 +23,9 @@
 <style lang="stylus" scoped>
 
   .kolibri-logo
-    width: 30%
+    width: 35%
 
   .unw-logo
-    width: 60%
+    width: 65%
 
 </style>

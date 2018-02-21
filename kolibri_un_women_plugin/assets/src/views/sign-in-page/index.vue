@@ -404,7 +404,9 @@
 
   .logo
     margin-top: 36px
-    width: 120px
+    width: 304px
+    margin-right: auto
+    margin-left: auto
 
   .login-text
     color: $login-text

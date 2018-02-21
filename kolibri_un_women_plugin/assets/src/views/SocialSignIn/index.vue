@@ -1,7 +1,7 @@
 <template>
 
   <div id="social-sign-in">
-    <p class="heading">{{ $tr('orSignInWIth') }}</p>
+    <p class="heading">{{ $tr('orAlternatively') }}</p>
 
     <k-external-link
       :text="$tr('signInWithGoogle')"
@@ -39,7 +39,7 @@
     },
 
     $trs: {
-      orSignInWIth: 'Or sign in with:',
+      orAlternatively: 'Or alternatively:',
       signInWithGoogle: 'Sign in with Google',
       signInWithFacebook: 'Sign in with Facebook',
       signInWithTwitter: 'Sign in with Twitter',
