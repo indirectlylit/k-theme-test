@@ -348,8 +348,9 @@
       margin-top: 0
 
   .app-bar-icon
-    width: 150px
+    width: 102px
     margin-left: 0.25em
+    padding: 2px
     background-color: white
 
   .footer

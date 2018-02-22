@@ -3,26 +3,43 @@
   <div id="social-sign-in">
     <p class="heading">{{ $tr('orAlternatively') }}</p>
 
-    <k-external-link
-      :text="$tr('signInWithGoogle')"
-      appearance="raised-button"
-      class="google-button"
+    <a
       href="/user/login/google-oauth2/"
-    />
+      class="button secondary raised google-button"
+    >
+      <file-svg
+        src="./google.svg"
+        slot="icon"
+      />
+      {{ $tr('signInWithGoogle') }}
+    </a>
+
     <br>
-    <k-external-link
-      :text="$tr('signInWithFacebook')"
-      appearance="raised-button"
-      class="facebook-button"
+
+    <a
       href="/user/login/facebook/"
-    />
+      class="button secondary raised facebook-button"
+    >
+        <file-svg
+          src="./facebook.svg"
+          slot="icon"
+        />
+        {{ $tr('signInWithFacebook') }}
+    </a>
+
     <br>
-    <k-external-link
-      :text="$tr('signInWithTwitter')"
-      appearance="raised-button"
-      class="twitter-button"
+
+    <a
       href="/user/login/twitter/"
-    />
+      class="button secondary raised twitter-button"
+    >
+        <file-svg
+          src="./twitter.svg"
+          slot="icon"
+        />
+        {{ $tr('signInWithTwitter') }}
+    </a>
+
   </div>
 
 </template>
@@ -30,14 +47,8 @@
 
 <script>
 
-  import kExternalLink from 'kolibri.coreVue.components.kExternalLink';
-
   export default {
     name: 'socialSignIn',
-    components: {
-      kExternalLink,
-    },
-
     $trs: {
       orAlternatively: 'Or alternatively:',
       signInWithGoogle: 'Sign in with Google',
@@ -51,6 +62,8 @@
 
 <style lang="stylus" scoped>
 
+  @require '~kolibri.styles.buttonAndLinkStyles'
+
   .heading
     color: white
 
@@ -58,9 +71,15 @@
   $facebook = #3B5998
   $twitter = #1DA1F2
 
-
   #social-sign-in
     .button.secondary.raised
+      min-width: 245px
+      text-align: left
+      svg
+        vertical-align: text-bottom
+        margin-right: 8px
+        height: 20px
+        fill: white
       &.google-button
         background-color: $google
         &:hover, &:focus
