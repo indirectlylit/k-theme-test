@@ -3,8 +3,11 @@
   <div class="fh">
     <div class="wrapper-table">
       <div class="main-row"><div id="main-cell">
-        <logo class="logo" />
-        <h1 class="login-text title">{{ $tr('kolibri') }}</h1>
+        <logo
+          :useWhiteText="true"
+          class="logo"
+        />
+        <!-- <h1 class="login-text title">{{ $tr('kolibri') }}</h1> -->
         <form class="login-form" ref="form" @submit.prevent="signIn">
           <ui-alert
             v-if="invalidCredentials"
@@ -403,10 +406,8 @@
     height: 100%
 
   .logo
-    margin-top: 36px
+    margin: 36px auto
     width: 304px
-    margin-right: auto
-    margin-left: auto
 
   .login-text
     color: $login-text

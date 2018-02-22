@@ -6,8 +6,14 @@
       src="./icons/kolibri-logo.svg"
     >
     <img
+      v-if="useWhiteText"
+      src="./icons/unw-white-text.svg"
       class="unw-logo"
+    >
+    <img
+      v-else
       src="./icons/unw.svg"
+      class="unw-logo"
     >
   </div>
 
@@ -16,9 +22,18 @@
 
 <script>
 
-  export default {};
+  export default {
+    props: {
+      useWhiteText: {
+        type: Boolean,
+        required: false,
+        default: false,
+      },
+    },
+  };
 
 </script>
+
 
 <style lang="stylus" scoped>
 
