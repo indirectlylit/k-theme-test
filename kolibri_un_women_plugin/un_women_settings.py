@@ -9,11 +9,14 @@ AUTHENTICATION_BACKENDS += ['social_core.backends.google.GoogleOAuth2',
                             'social_core.backends.twitter.TwitterOAuth',
                             'social_core.backends.facebook.FacebookOAuth2']
 
+MIDDLEWARE_CLASSES += ('social_django.middleware.SocialAuthExceptionMiddleware',)
+
 if "kolibri_un_women_plugin" not in INSTALLED_APPS:
     INSTALLED_APPS += ["kolibri_un_women_plugin"]
 
 SOCIAL_AUTH_URL_NAMESPACE = 'kolibri:user:social'
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/learn'
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/user'
 
 # Default pipeline methods
 SOCIAL_AUTH_PIPELINE = [
