@@ -2,7 +2,7 @@
 
   <div id="signup-page">
 
-    <ui-toolbar type="colored" textColor="white">
+    <ui-toolbar type="colored" textColor="white" :removeNavIcon="true">
       <template slot="icon">
         <logo class="app-bar-icon" />
       </template>
