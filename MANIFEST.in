@@ -6,10 +6,12 @@ include README.rst
 include requirements.txt
 include kolibri_un_women_plugin/*.js
 recursive-exclude kolibri_un_women_plugin/* *pyc
-recursive-include kolibri_un_women_plugin/locale/* *.*
+recursive-include kolibri_un_women_plugin/ims *.*
+recursive-include kolibri_un_women_plugin/build *.*
 recursive-include kolibri_un_women_plugin/static *.*
 recursive-include kolibri_un_women_plugin/templates *.*
-recursive-include kolibri_un_women_plugin/ims *.*
-recursive-include kolibri_un_women_plugin/assets *.*
-
-recursive-include kolibri_un_women_plugin/build *.json
+recursive-include kolibri_un_women_plugin *.py
+recursive-include kolibri_un_women_plugin/templatetags *.*
+recursive-include kolibri_un_women_plugin/assets/src *.*
+recursive-include kolibri_instant_schools_plugin/locale *.mo
+recursive-include kolibri_instant_schools_plugin/locale *.json
