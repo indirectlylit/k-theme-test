@@ -4,6 +4,7 @@ include CHANGELOG.rst
 include LICENSE
 include README.rst
 include requirements.txt
+include kolibri_instant_schools_plugin/*.js
 recursive-exclude kolibri_un_women_plugin/* *pyc
 recursive-include kolibri_un_women_plugin/locale/* *.*
 recursive-include kolibri_un_women_plugin/static *.*
